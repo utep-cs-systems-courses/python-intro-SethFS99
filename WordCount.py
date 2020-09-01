@@ -21,7 +21,7 @@ if __name__ == "__main__":
     with open(sys.argv[1], mode="r", encoding="utf-8") as input_file, \
             open(sys.argv[2], mode="w", encoding="utf-8") as output_file:
                 file = input_file.read()#reads the entire file
-                file = re.split("[; |, |. |! |? |-|:|\n|\s|\t|']\s*",file)#splits file by all spaces and punctuation plus some extra
+                file = re.split("[; |, |. |! |?"+ '|"|'+" |-|:|\n|\s|\t|']\s*",file)#splits file by all spaces and punctuation plus some extra
                 
                 for word in file:
                     if len(word) == 0:
